@@ -21,7 +21,7 @@ public class App {
 
     static String page(String host, String version) {
         return "<html><body style=\"font-family:sans-serif;text-align:center;margin-top:60px\">"
-                + "<h1>Hello from the XYZ app on AWS EKS</h1>"
+                + "<h1>Hello from Arpitha - CI/CD works</h1>"
                 + "<p>Served by pod: <b>" + host + "</b></p>"
                 + "<p>Build version: <b>" + version + "</b></p>"
                 + "</body></html>";
