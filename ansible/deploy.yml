@@ -1,0 +1,16 @@
+- hosts: localhost
+  connection: local
+  vars:
+    image: "arpithab2025/xyz-app"
+    tag: "latest"
+  tasks:
+    - name: Render Kubernetes manifest
+      template:
+        src: k8s-deployment.yml.j2
+        dest: /tmp/xyz-deployment.yml
+
+    - name: Apply to the EKS cluster
+      command: kubectl apply -f /tmp/xyz-deployment.yml
+
+    - name: Wait for the rollout to finish
+      command: kubectl rollout status deployment/xyz-app --timeout=180s
